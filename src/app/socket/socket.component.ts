@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../model/item';
-
+import { Item } from '../model/item'; 
 @Component({
   selector: 'app-socket',
   templateUrl: './socket.component.html',
@@ -8,7 +7,7 @@ import { Item } from '../model/item';
 })
 export class SocketComponent implements OnInit {
   defaultTimer: number = 1000;
-  defaultSize: number = 1000000;
+  defaultSize: number = 1000;
   additionalIds: string = "12, 15, 16, 18, 25, 26, 78, 52, 29, 30";
   b2bWorker: any;
   result: Item[] = [];
@@ -19,7 +18,7 @@ export class SocketComponent implements OnInit {
 
   intializeB2bWorker() {
     if (typeof Worker !== 'undefined') {
-      // Create a new
+      // Create a new 
       this.b2bWorker = new Worker(new URL('./b2b.worker', import.meta.url));
     } else {
       // Web workers are not supported in this environment.
@@ -35,8 +34,7 @@ export class SocketComponent implements OnInit {
       arr.forEach((element, index) => {
         data[index].id = element;
       });
-      this.result = data
-
+      this.result = data; 
     });
   }
 
